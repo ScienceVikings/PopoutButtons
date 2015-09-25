@@ -1,0 +1,24 @@
+/* Empty. Add your own CSS if you like */
+.circleButton{
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px solid black;
+  height: 30px;
+  width: 30px;
+  /*padding: 5px;*/
+  text-align: center;
+  display: inline-table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 2px #888888;
+  cursor: pointer;
+}
+.circleButton i{
+  display: block;
+  /*padding-top: 2.5px;*/
+}
+.hidden{
+  display: none !important;
+}
