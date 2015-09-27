@@ -7,12 +7,13 @@ angular.module('svl.popout',[])
     restrict: 'E',
     transclude: true,
     scope: {
-
+      centerOffset: '=',
+      radOffset: '=',
+      radStep: '='
     },
     controller: function($scope){
       this.addButton = function(button){
         buttons.push(button);
-        console.log(button);
       }
     },
     link: function(scope, element, attrs){
@@ -56,8 +57,8 @@ angular.module('svl.popout',[])
         translate(element, coords.x,coords.y);
 
         //Make the buttonOffsetDistance and
-        var buttonOffsetDistance = 50;
-        var radOffset = 0;
+        var buttonOffsetDistance = scope.centerOffset || 50;
+        var radOffset = scope.radOffset || 0;
 
         angular.forEach(buttons, function(btn){
 
@@ -72,7 +73,7 @@ angular.module('svl.popout',[])
             var y = Math.round(Math.cos(radOffset)*(-buttonOffsetDistance));
 
             translate(btn.element, x, y, 0.25);
-            radOffset += Math.PI/4;
+            radOffset += scope.radStep || Math.PI/4;
 
           },0);
 
