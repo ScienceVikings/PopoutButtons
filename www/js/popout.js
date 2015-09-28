@@ -1,4 +1,4 @@
-angular.module('svl.popout',[])
+angular.module('svl.popout',['ionic'])
 .directive('svlPopoutButtons', function(svlPopoutDelegate, $timeout){
 
   var buttons = [];
